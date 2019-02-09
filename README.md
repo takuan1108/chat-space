@@ -44,3 +44,13 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - belongs_to :menber
+
+## groupsテーブル
+|column|Type|Options|
+|------|----|-------|
+|group-name|string|null: false, foreign_key: false|
+
+### Association
+- has_many :messages
+- belongs_to :menber
+
