@@ -27,8 +27,8 @@ Things you may want to cover:
 ## membersテーブル
 |column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -44,23 +44,25 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :groups, through: :members
+- has_many :members
 
 ## groupsテーブル
 |column|Type|Options|
 |------|----|-------|
-|group-name|string|null: false, foreign_key: false|
+|name|string|null: false, foreign_key: false|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :members
+- has_many :members
 
 ## messagesテーブル
 |column|Type|Options|
 |------|----|-------|
 |body|text|null: true, foreign_key: false|
 |image|text|null: true, foreign_key: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
