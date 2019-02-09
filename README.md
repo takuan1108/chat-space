@@ -33,3 +33,14 @@ Things you may want to cover:
 ### Association
 - has_many :groups
 - has_many :users
+
+## usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false, foreign_key: false|
+|email|string|null: false, foreign_key: false|
+|password|string|null: false, foreign_key: false|
+
+### Association
+- has_many :messages
+- belongs_to :menber
