@@ -54,3 +54,14 @@ Things you may want to cover:
 - has_many :messages
 - belongs_to :menber
 
+## messagesテーブル
+|column|Type|Options|
+|------|----|-------|
+|body|text|null: true, foreign_key: false|
+|image|text|null: true, foreign_key: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
