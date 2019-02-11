@@ -1,12 +1,13 @@
 .user{
-  $userHeight: 90px;
   background-color: #253141;
-  height: $userHeight;
+  height: $headerHeight;
   &__box {
-    line-height: $userHeight;
+    line-height: $headerHeight;
     margin: 0 20px;
     &__name {
       color: $fontColorWhite;
+      font-size: 16px;
+      font-weight: bold;
     }
     &__menu {
       display:inline-block;
