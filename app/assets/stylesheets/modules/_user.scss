@@ -1,0 +1,26 @@
+.user{
+  $userHeight: 90px;
+  background-color: #253141;
+  height: $userHeight;
+  &__box {
+    line-height: $userHeight;
+    margin: 0 20px;
+    &__name {
+      color: $fontColorWhite;
+    }
+    &__menu {
+      display:inline-block;
+      float: right;
+      li {
+        display: inline-block;
+        margin: 1px;
+        a {
+          text-decoration: none;
+          i {
+            color: $fontColorWhite;
+          }
+        }
+      }
+    }
+  }
+}
