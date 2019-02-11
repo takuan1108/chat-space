@@ -1,2 +1,45 @@
-%h1 Message#index
-%p Find me in app/views/message/index.html.haml
+.left-wrapper
+  .user
+    .user__box
+      %span.user__box__name 大塚
+      %ul.user__box__menu
+        %li
+          %a{href: "/"}
+            %i.fa.fa-edit
+        %li.user__box__menu
+          %a{href: "/"}
+            %i.fa.fa-cog
+  .group-container
+    .group
+      %p.group__title 飲み会
+      %p.group__new-text いつやろう？
+    .group
+      %p.group__title 政治について語ろう
+      %p.group__newt-ext 選挙どうする？
+.right-wrapper
+  .header
+    .header__info
+      %p.header__info__title 飲み会
+      %ul.header__info__member-list
+        %li.header__info__member-list__member 大塚
+    %a{href: "/", class: "header__edit-btn"}
+      %span Edit
+  .message-container
+    .message
+      .message__info
+        %p.message__info__name 大塚
+        %p.message__info__date 2019/02/10(Sun) 21:13:47
+      %p.message__text いつやろう？
+    .message
+      .message__info
+        %p.message__info__name 大塚
+        %p.message__info__date 2019/02/10(Sun) 21:13:47
+      %p.message__text やっぱり明日かな
+  .form-container
+    %form.form
+      .form__box
+        %input{placeholder: "type a message", class: "form__box__text"}
+        %label.form__box__image-icon
+          %i.form__box__image-icon__image
+      %input{type: "submit", value: "SEND", class: "form__submit-btn"}
+
