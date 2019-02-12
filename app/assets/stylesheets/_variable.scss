@@ -1,5 +1,9 @@
 $fontColorWhite: #ffffff;
 $fontColorGray: #999999;
 $fontColorBlack: #434A54;
+$fontColorSky: #38AEF0;
 
-$headerHeight: 90px;
+$headerHeight: 100px;
+$leftWidth: 300px;
+$rightWidth: calc(100vw - #{$leftWidth});
+$formHeight: 90px;

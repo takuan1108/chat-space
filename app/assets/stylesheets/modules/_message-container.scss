@@ -1,0 +1,5 @@
+.message-container {
+  background-color: #FAFAFA;
+  min-height: calc(100vh - #{$headerHeight} - #{$formHeight});
+  padding-top: 26px;
+}

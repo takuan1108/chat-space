@@ -1,0 +1,10 @@
+.group {
+  padding: 20px;
+  color: $fontColorWhite;
+  &__title {
+    font-size: 15px;
+  }
+  &__new-message {
+    font-size: 11px;
+  }
+}

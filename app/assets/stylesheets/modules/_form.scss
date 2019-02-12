@@ -1,0 +1,41 @@
+$formboxHeight: 50px;
+
+.form {
+  height: $formHeight;
+  background-color: #DDDDDD;
+  padding: 20px 40px;
+  &__box {
+    // margin: 0 40px;
+    position: relative;
+    float: left;
+    &__text {
+      display: inline-block;
+      width: calc(#{$rightWidth} - 200px);
+      height: $formboxHeight;
+      margin-right: 15px;
+      padding-right: 45px;
+      border: none;
+    }
+    &__icon {
+      position: absolute;
+      right: 22.5px;
+      top: 15px;
+      i {
+        font-size: 25px;
+      }
+    }
+  }
+  &__submit-btn {
+    display: block;
+    float: left;
+    background-color: $fontColorSky;
+    width: 100px;
+    height: $formboxHeight;
+    text-align: center;
+    text-decoration: none;
+    span {
+      color: $fontColorWhite;
+      line-height: $formboxHeight;
+    }
+  }
+}

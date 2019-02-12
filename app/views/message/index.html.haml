@@ -12,34 +12,37 @@
   .group-container
     .group
       %p.group__title 飲み会
-      %p.group__new-text いつやろう？
+      %p.group__new-message いつやろう？
     .group
       %p.group__title 政治について語ろう
-      %p.group__newt-ext 選挙どうする？
+      %p.group__new-message 選挙どうする？
 .right-wrapper
   .header
-    .header__info
-      %p.header__info__title 飲み会
-      %ul.header__info__member-list
-        %li.header__info__member-list__member 大塚
-    %a{href: "/", class: "header__edit-btn"}
-      %span Edit
+    .header__box
+      .header__box__info
+        %p.header__box__info__title 飲み会
+        %span.header__box__info__member-list Member：
+        %ul.header__box__info__member-list
+          %li 大塚
+          %li 田中
+      %a{href: "/", class: "header__box__edit-btn"}
+        %span Edit
   .message-container
     .message
       .message__info
-        %p.message__info__name 大塚
-        %p.message__info__date 2019/02/10(Sun) 21:13:47
+        %span.message__info__name 大塚
+        %span.message__info__date 2019/02/10(Sun) 21:13:47
       %p.message__text いつやろう？
     .message
       .message__info
-        %p.message__info__name 大塚
-        %p.message__info__date 2019/02/10(Sun) 21:13:47
+        %span.message__info__name 大塚
+        %span.message__info__date 2019/02/10(Sun) 21:13:47
       %p.message__text やっぱり明日かな
-  .form-container
-    %form.form
-      .form__box
-        %input{placeholder: "type a message", class: "form__box__text"}
-        %label.form__box__image-icon
-          %i.form__box__image-icon__image
-      %input{type: "submit", value: "SEND", class: "form__submit-btn"}
+  %form{class: "form", name: "messageform"}
+    .form__box
+      %input{placeholder: "type a message", class: "form__box__text"}
+      %label.form__box__icon
+        %i.fa.fa-image
+    %a{href: "javascript:document.messageform.submit()", class: "form__submit-btn"}
+      %span Send
 

@@ -1,0 +1,41 @@
+.header {
+  height: $headerHeight;
+  border-bottom: solid;
+  border-color: #eeeeee;
+  border-width: 1px;
+  &__box {
+    margin: 0 40px;
+    padding-top: 28px;
+    &__info {
+      float: left;
+      padding-top: 7px;
+      &__title {
+        font-size: 20px;
+        color: #333333
+      }
+      &__member-list {
+        display:inline-block;
+        margin-top: 15px;
+        @include subinfo;
+        li {
+          display:inline-block;
+          margin-right: 2px;
+        }
+      }
+    }
+    &__edit-btn {
+      display: block;
+      float: right;
+      height: 40px;
+      padding: 0 20px;
+      border: solid;
+      border-color: $fontColorSky;
+      border-width: 1px;
+      text-decoration: none;
+      span {
+        color: $fontColorSky;
+        line-height: 38px;
+      }
+    }
+  }
+}
