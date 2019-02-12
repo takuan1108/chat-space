@@ -1,0 +1,27 @@
+.user{
+  background-color: #253141;
+  height: $headerHeight;
+  &__box {
+    line-height: $headerHeight;
+    margin: 0 20px;
+    &__name {
+      color: $fontColorWhite;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__menu {
+      display:inline-block;
+      float: right;
+      li {
+        display: inline-block;
+        margin: 1px;
+        a {
+          text-decoration: none;
+          i {
+            color: $fontColorWhite;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.message {
+  padding: 20px 40px;
+  color: $fontColorBlack;
+  &__info {
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    &__date {
+      @include subinfo;
+      vertical-align: top;
+    }
+  }
+  &__text {
+    margin-top: 10px;
+  }
+}
