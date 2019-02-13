@@ -1,13 +1,14 @@
 .left-wrapper
   .account
     .account__box
-      %span.account__box__name 大塚
+      %span.account__box__name
+        = current_user.name
       %ul.account__box__menu
         %li
           = link_to "/" do
             %i.fa.fa-edit
         %li.account__box__menu
-          = link_to "/" do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
   .group-container
     .group
