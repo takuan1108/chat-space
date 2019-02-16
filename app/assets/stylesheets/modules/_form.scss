@@ -32,9 +32,11 @@ $formboxHeight: 50px;
     height: $formboxHeight;
     text-align: center;
     text-decoration: none;
-    span {
-      color: $fontColorWhite;
-      line-height: $formboxHeight;
-    }
+    color: $fontColorWhite;
+    line-height: $formboxHeight;
   }
+}
+
+.hidden {
+  display: none;
 }
