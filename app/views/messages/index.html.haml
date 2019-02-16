@@ -1,48 +1,25 @@
 .left-wrapper
-  .account
-    .account__box
-      %span.account__box__name
-        = current_user.name
-      %ul.account__box__menu
-        %li
-          = link_to new_group_path do
-            %i.fa.fa-edit
-        %li.account__box__menu
-          = link_to edit_user_path(current_user) do
-            %i.fa.fa-cog
-  .group-container
-    .group
-      %p.group__title 飲み会
-      %p.group__new-message いつやろう？
-    .group
-      %p.group__title 政治について語ろう
-      %p.group__new-message 選挙どうする？
+  = render "shared/side_bar"
 .right-wrapper
   .header
     .header__box
       .header__box__info
-        %p.header__box__info__title 飲み会
+        %p.header__box__info__title
+          = @group.name
         %span.header__box__info__member-list Member：
         %ul.header__box__info__member-list
-          %li 大塚
-          %li 田中
+          - @group.users.each do |user|
+            %li
+              = user.name
       = link_to "/", class: "header__box__edit-btn" do
         %span Edit
   .message-container
-    .message
-      .message__info
-        %span.message__info__name 大塚
-        %span.message__info__date 2019/02/10(Sun) 21:13:47
-      %p.message__text いつやろう？
-    .message
-      .message__info
-        %span.message__info__name 大塚
-        %span.message__info__date 2019/02/10(Sun) 21:13:47
-      %p.message__text やっぱり明日かな
-  %form{class: "form", name: "messageform"}
-    .form__box
-      %input{placeholder: "type a message", class: "form__box__text"}
-      %label.form__box__icon
-        %i.fa.fa-image
-    = link_to "javascript:document.messageform.submit()", class: "form__submit-btn" do
-      %span Send
+    = render @messages
+  = form_for [@group, @message], name: "messageform" do |f|
+    .form
+      .form__box
+        = f.text_field :content, placeholder: "type a message", class: "form__box__text"
+        = f.label :image, class: "form__box__icon" do
+          %i.fa.fa-image
+          = f.file_field :image, class: "hidden"
+      = f.submit "Send", class: "form__submit-btn"

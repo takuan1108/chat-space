@@ -59,7 +59,7 @@ Things you may want to cover:
 ## messagesテーブル
 |column|Type|Options|
 |------|----|-------|
-|body|text|null: true, foreign_key: false|
+|content|text|null: true, foreign_key: false|
 |image|text|null: true, foreign_key: false|
 |user_id|reference|null: false, foreign_key: true|
 |group_id|reference|null: false, foreign_key: true|
