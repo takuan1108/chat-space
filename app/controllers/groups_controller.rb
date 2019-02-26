@@ -19,7 +19,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -29,7 +28,6 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-
 
   private
   def group_params

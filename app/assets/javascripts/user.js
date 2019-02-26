@@ -5,7 +5,7 @@ $(function(){
   var user = {}
 
   function searchUser(input){
-    var url = "/users"
+    let url = "/users"
     $.ajax({
       url: url,
       type: "GET",
@@ -13,7 +13,6 @@ $(function(){
       dataType: "json",
     })
     .done(function(users){
-      // console.log(users);
       result_user.empty();
       if(users.length !== 0){
         users.forEach(function(user){
