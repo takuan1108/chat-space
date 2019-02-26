@@ -1,6 +1,6 @@
 $(function(){
 
-  function buildSendMessageHtml(message){
+  function buildMessageHtml(message){
     var html = `<div class="message">
                   <div class="message__info">
                     <span class="message__info__name">
@@ -20,10 +20,17 @@ $(function(){
     return html;
   }
 
+  function scrollToButtom(){
+    let speed = 400;
+    let target = $(".message").last();
+    let position = target.offset().top + $(".message-container").scrollTop();
+    $('.message-container').animate({scrollTop: position}, speed, 'swing');
+  }
+
   $("#new_message").on("submit", function(e){
     e.preventDefault();
-    var input = new FormData(this);
-    var url = $(this).attr("action");
+    let input = new FormData(this);
+    let url = $(this).attr("action");
     $.ajax({
       url: url,
       type: 'POST',
@@ -33,13 +40,10 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      html = buildSendMessageHtml(message);
+      html = buildMessageHtml(message);
       $(".message-container").append(html);
       $(".form__box__text").val("");
-      var speed = 400;
-      var target = $(".message").last();
-      var position = target.offset().top + $(".message-container").scrollTop();
-      $('.message-container').animate({scrollTop: position}, speed, 'swing');
+      scrollToButtom();
     })
     .fail(function(){
       alert('投稿に失敗しました');
@@ -48,5 +52,25 @@ $(function(){
       $(".form__submit-btn").removeAttr("disabled");
     });
   })
+
+  setInterval(function(){
+    let url = $(this).attr("location");
+    let pre_messages_length = $(".message").length;
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: { pre_messages_length: pre_messages_length },
+      dataType: "json",
+    })
+    .done(function(new_messages){
+      new_messages.forEach(new_message){
+        buildMessageHtml(new_message);
+      }
+      scrollToButtom();
+    })
+    .fail(function(){
+      alert('コメントの取得に失敗しました');
+    })
+  },5000)
 
 })

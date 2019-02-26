@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.json { @new_messages = @messages.where.not(user_id: current_user.id).last(@messages.length - params[:pre_messages_length].to_i) }
+      format.html
+    end
   end
 
   def create
