@@ -40,7 +40,7 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      html = buildMessageHtml(message);
+      let html = buildMessageHtml(message);
       $(".message-container").append(html);
       $(".form__box__text").val("");
       scrollToButtom();
@@ -63,10 +63,10 @@ $(function(){
       dataType: "json",
     })
     .done(function(new_messages){
-      new_messages.forEach(new_message){
-        buildMessageHtml(new_message);
-      }
-      scrollToButtom();
+      new_messages.forEach(function(new_message){
+        let html = buildMessageHtml(new_message);
+        $(".message-container").append(html);
+      });
     })
     .fail(function(){
       alert('コメントの取得に失敗しました');
