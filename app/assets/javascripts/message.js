@@ -1,7 +1,7 @@
 $(function(){
 
   function buildMessageHtml(message){
-    var html = `<div class="message">
+    var html = `<div class="message" value="${message.id}">
                   <div class="message__info">
                     <span class="message__info__name">
                       ${message.user_name}
@@ -55,11 +55,11 @@ $(function(){
 
   setInterval(function(){
     let url = $(this).attr("location");
-    let pre_messages_length = $(".message").length;
+    let last_message_id = $(".message").last().attr("value");
     $.ajax({
       url: url,
       type: "GET",
-      data: { pre_messages_length: pre_messages_length },
+      data: { last_message_id: last_message_id },
       dataType: "json",
     })
     .done(function(new_messages){
