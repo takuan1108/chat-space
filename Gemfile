@@ -41,6 +41,11 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -51,6 +56,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
@@ -64,3 +71,4 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+
