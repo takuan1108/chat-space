@@ -56,6 +56,7 @@ $(function(){
   setInterval(function(){
     let url = $(this).attr("location");
     let last_message_id = $(".message").last().attr("value");
+    console.log(last_message_id);
     $.ajax({
       url: url,
       type: "GET",
