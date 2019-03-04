@@ -56,7 +56,10 @@ $(function(){
   setInterval(function(){
     let url = $(this).attr("location");
     let last_message_id = $(".message").last().attr("value");
-    console.log(last_message_id);
+    if (last_message_id == null){
+      console.log("メッセージなし");
+      return;
+    }
     $.ajax({
       url: url,
       type: "GET",
